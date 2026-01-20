@@ -68,19 +68,75 @@
         </div>
     </section>
 
-    <!-- RSVP Section -->
-    <section id="rsvp" class="section light-bg">
-        <div class="container">
-            <h2>RSVP</h2>
-            <p>Please let us know if you can make it by September 1st.</p>
+  <!-- RSVP Section -->
+<section id="rsvp" class="section light-bg">
+    <div class="container">
+        <h2>RSVP</h2>
+        <p>Kindly respond by September 1st.</p>
+
+        <!-- 1. The Hidden Iframe (This catches the redirect) -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
+
+        <!-- 2. The Form -->
+        <!-- target="hidden_iframe" sends the result to the invisible box -->
+        <!-- onsubmit="submitted=true" triggers the success message -->
+        <form 
+            action="https://docs.google.com/forms/d/e/1FAIpQLSdjUtiF-bJtnunk8vh71y5KtXBSts74nXszXvLC4sDsYMhNbw/formResponse" 
+            method="post" 
+            target="hidden_iframe"
+            onsubmit="submitted=true; showSuccessMessage();"
+            class="custom-form"
+            id="rsvp-form"
+        >
             
-            <!-- TIP: Go to Google Forms, create a form, click Send > Embed HTML, and paste the iframe here -->
-            <div class="form-placeholder">
-                <p><i>[Embed your Google Form or Typeform here]</i></p>
-                <a href="#" class="cta-button">Open RSVP Form</a>
+            <!-- Question 1: Name -->
+            <!-- Replace name="entry.123456" with your specific ID -->
+            <div class="form-group">
+                <input type="text" name="entry.301367424" placeholder="Full Name(s)" required>
             </div>
+
+            <!-- Question 2: Attending? -->
+            <div class="form-group">
+                <select name="entry.1261223599" required>
+                    <option value="" disabled selected>Will you be attending?</option>
+                    <option value="Joyfully Accepts">Joyfully Accepts</option>
+                    <option value="Regretfully Declines">Regretfully Declines</option>
+                </select>
+            </div>
+
+            <!-- Question 3: Guest Count -->
+            <div class="form-group">
+                <select name="entry.1019732798">
+                    <option value="" disabled selected>Number of Guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+
+            <button type="submit" class="cta-button">Send RSVP</button>
+        </form>
+
+        <!-- 3. The Success Message (Hidden by default) -->
+        <div id="success-message" style="display:none; margin-top: 20px;">
+            <h3>Thank you!</h3>
+            <p>Your RSVP has been sent. We can't wait to see you!</p>
         </div>
-    </section>
+
+    </div>
+</section>
+
+<!-- Simple Script to handle the UI switch -->
+<script>
+    var submitted = false;
+    
+    function showSuccessMessage() {
+        // Hide the form smoothly
+        document.getElementById('rsvp-form').style.display = 'none';
+        // Show the success message
+        document.getElementById('success-message').style.display = 'block';
+    }
+</script>
+
 
     <footer>
         <p>Made with love for Jane & John &copy; 2026</p>
