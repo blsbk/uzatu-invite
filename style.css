@@ -185,6 +185,43 @@ a {
     border: 2px dashed #ddd;
 }
 
+/* Custom Form Styling */
+.custom-form {
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif; /* Matches your body font */
+    font-size: 1rem;
+    background-color: white;
+    transition: border 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    outline: none;
+    border-color: #b76e79; /* Highlights with your Rose Gold theme color */
+    box-shadow: 0 0 5px rgba(183, 110, 121, 0.2);
+}
+
+/* Style the submit button to match the others */
+.custom-form button {
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .hero h1 { font-size: 3rem; }
