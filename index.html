@@ -113,15 +113,15 @@
 
                 <!-- 1. The Hidden Iframe (This catches the redirect) -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                    onload="if(submitted) {window.location='#';}"></iframe>
+                    onload="if(window.submitted) {showThanks();}"></iframe>
 
                 <!-- 2. The Form -->
                 <!-- target="hidden_iframe" sends the result to the invisible box -->
                 <!-- onsubmit="submitted=true" triggers the success message -->
                 <form
                     action="https://docs.google.com/forms/d/e/1FAIpQLSdjUtiF-bJtnunk8vh71y5KtXBSts74nXszXvLC4sDsYMhNbw/formResponse"
-                    method="post" target="hidden_iframe"
-                    class="pretty-form" id="guest-form">
+                    method="post" target="hidden_iframe" class="pretty-form" id="guest-form"
+                    onsubmit="window.submitted=true">
                     <div class="field">
                         <label for="guest1" data-i18n="form_main_label">Аты-жөні</label>
                         <input id="guest1" name="entry.301367424" type="text" placeholder="Мысалы: Айдана Нұрлан"
@@ -408,7 +408,6 @@
 
             var thanks = document.getElementById('thanks');
             document.getElementById('guest-form').addEventListener('submit', function (e) {
-                e.preventDefault();
                 thanks.hidden = false;
                 document.body.classList.add('no-scroll');
             });
@@ -417,6 +416,11 @@
                 thanks.hidden = true;
                 document.body.classList.remove('no-scroll');
             });
+
+            function showThanks() {
+                document.getElementById('thanks').hidden = false;
+                document.body.classList.add('no-scroll');
+            }
         });
     </script>
 
