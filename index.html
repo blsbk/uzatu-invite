@@ -129,11 +129,21 @@
                     </div>
 
                     <div class="toggle">
-                        <input id="with-spouse" type="hidden" name="entry.1261223599" value="Мен жұбайыммен/жолдасыммен
-                            келемін">
-                        <label for="with-spouse" data-i18n="form_spouse_toggle">Мен жұбайыммен/жолдасыммен
-                            келемін</label>
-                    </div>
+    <!-- UI чекбокс -->
+    <input id="with-spouse-ui" type="checkbox">
+    <label for="with-spouse-ui" data-i18n="form_spouse_toggle">
+        Мен жұбайыммен/жолдасыммен келемін
+    </label>
+</div>
+
+<!-- Google Form input -->
+<input
+    type="hidden"
+    id="with-spouse-hidden"
+    name="entry.1261223599"
+    value=""
+>
+
                     <button type="submit" class="cta-button cta-secondary" data-i18n="form_finish_button">
                         Аяқтау
                     </button>
@@ -397,16 +407,6 @@
                 scrollToId('form');
             });
 
-            var withSpouse = document.getElementById('with-spouse');
-            var spouseField = document.getElementById('spouse-field');
-            var guest2 = document.getElementById('guest2');
-
-            withSpouse.addEventListener('change', function () {
-                spouseField.hidden = !withSpouse.checked;
-                guest2.required = withSpouse.checked;
-                if (!withSpouse.checked) guest2.value = '';
-            });
-
             var thanks = document.getElementById('thanks');
             document.getElementById('guest-form').addEventListener('submit', function (e) {
                 thanks.hidden = false;
@@ -417,6 +417,16 @@
                 thanks.hidden = true;
                 document.body.classList.remove('no-scroll');
             });
+
+            const spouseUI = document.getElementById('with-spouse-ui');
+const spouseHidden = document.getElementById('with-spouse-hidden');
+
+spouseUI.addEventListener('change', function () {
+    spouseHidden.value = spouseUI.checked
+        ? 'Мен жұбайыммен/жолдасыммен келемін'
+        : '';
+});
+
 
             function showThanks() {
                 document.getElementById('thanks').hidden = false;
