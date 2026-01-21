@@ -1,74 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane & John's Wedding</title>
-    <!-- Importing elegant fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>Әли & Бағдат — Шақыру</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#details">Details</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
-        </ul>
+    <audio id="bg-music" loop preload="auto">
+        <source src="toizhira.mp3" type="audio/mpeg">
+    </audio>
+
+    <nav class="navbar" aria-label="Навигация">
+        <div class="nav-inner">
+            <div class="brand">
+                <span class="brand-dot"></span>
+                <span class="brand-text">Әли & Бағдат</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#photo" data-i18n="nav_photo">Фото</a></li>
+                <li><a href="#invite" data-i18n="nav_invite">Шақыру</a></li>
+                <li><a href="#form" data-i18n="nav_form">Толтыру</a></li>
+            </ul>
+            <div class="lang-switcher" aria-label="Выбор языка">
+                <button type="button" class="lang-btn active" data-lang="kk">Қаз</button>
+                <button type="button" class="lang-btn" data-lang="en">En</button>
+                <button type="button" class="lang-btn" data-lang="ru">Ru</button>
+            </div>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <p class="subtitle">We invite you to celebrate the wedding of</p>
-            <h1>Jane & John</h1>
-            <p class="date">October 24, 2026</p>
-            <a href="#rsvp" class="cta-button">RSVP Now</a>
+    <header class="intro" id="photo">
+        <div class="intro-bg" aria-hidden="true"></div>
+        <div class="intro-shade" aria-hidden="true"></div>
+        <div class="intro-content">
+            <p class="intro-kicker" data-i18n="intro_kicker">ӘЛИ & БАҒДАТ</p>
+            <h1 class="intro-title" data-i18n="intro_title">Үйлену тойына шақыру</h1>
+            <p class="intro-hint" data-i18n="intro_hint">Төмен сырғытыңыз</p>
         </div>
     </header>
 
-    <!-- Our Story Section -->
-    <section id="story" class="section light-bg">
+    <section id="invite" class="section section-invite">
         <div class="container">
-            <h2>Our Story</h2>
-            <div class="story-grid">
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Couple Photo" class="story-img">
-                <div class="text-content">
-                    <p>It started with a coffee, followed by a walk in the park. Five years later, amidst the autumn leaves, a question was asked, and a "yes" was whispered.</p>
-                    <p>We are so excited to start this next chapter of our lives together and can't wait to celebrate with our favorite people.</p>
+            <div class="invite-card">
+                <p class="invite-greeting" data-i18n="invite_greeting">Құрметті  біздің ағайын-туыс,бауырларларымыз,нағашы-жиен,құдаларымыз,достарымыз,әріптес-сыныптастарымыз жәнеде көршілеріміз!</p>
+                <div class="invite-text-block">
+                    <p class="invite-text-line" data-i18n="invite_text_1">Сіздерді ұлымыз</p>
+                    <p class="invite-names" data-i18n="invite_names">Әли мен Бағдаттың</p>
+                    <p class="invite-text-line" data-i18n="invite_text_2">өмірлеріндегі ең маңызды күндерінің бірі –</p>
+                    <p class="invite-text-line" data-i18n="invite_text_3">үйлену тойының</p>
+                    <p class="invite-text-line" data-i18n="invite_text_4">қадірлі қонағы болуға шақырамыз.</p>
                 </div>
+                
+                <div class="invite-details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">🗓</div>
+                        <div class="detail-content">
+                            <div class="detail-label" data-i18n="invite_date_label">Күні</div>
+                            <div class="detail-value" data-i18n="invite_date">25 сәуір</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">⏰</div>
+                        <div class="detail-content">
+                            <div class="detail-label" data-i18n="invite_time_label">Уақыты</div>
+                            <div class="detail-value" data-i18n="invite_time">19:00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">📍</div>
+                        <div class="detail-content">
+                            <div class="detail-label" data-i18n="invite_address_label">Мекенжай</div>
+                            <a href="https://2gis.kz/uralsk/geo/70030077082660641/51.271784,51.171586" target="_blank" rel="noopener noreferrer" class="detail-value detail-link" data-i18n="invite_address">Орал қаласы, Зағачанск ықшам ауданы, Айтқұлова 29</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="invite-hosts">
+                    <p class="hosts-label" data-i18n="invite_hosts_label">Той иелері:</p>
+                    <p class="hosts-names" data-i18n="invite_hosts">Сәтжан & Гүлсайран</p>
+                </div>
+
+                <p class="invite-closing" data-i18n="invite_closing">Сіздермен қуанышымызды бөлісуге асыға күтеміз! 🤍</p>
+
+                <button type="button" class="cta-button" id="accept-invite" data-i18n="invite_button">
+                    Шақыруды қабылдау
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Details Section -->
-    <section id="details" class="section parallax-bg">
-        <div class="overlay">
-            <div class="container text-white">
-                <h2>The Details</h2>
-                <div class="details-grid">
-                    <div class="detail-item">
-                        <h3>When</h3>
-                        <p>Saturday, October 24, 2026</p>
-                        <p>Ceremony: 4:00 PM</p>
-                        <p>Reception: 6:00 PM</p>
-                    </div>
-                    <div class="detail-item">
-                        <h3>Where</h3>
-                        <p>The Grand Garden Estate</p>
-                        <p>123 Love Lane, New York, NY</p>
-                        <br>
-                        <a href="https://maps.google.com" target="_blank" class="map-link">View Map</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  <!-- RSVP Section -->
+    <!-- RSVP Section -->
 <section id="rsvp" class="section light-bg">
     <div class="container">
         <h2>RSVP</h2>
@@ -126,9 +152,27 @@
     </div>
 </section>
 
-<!-- Simple Script to handle the UI switch -->
-<script>
-    var submitted = false;
+    <button type="button" class="music-btn" id="music-toggle" aria-pressed="false" aria-label="Toggle music">
+        <svg class="music-icon" id="music-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="music-speaker" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <div class="thanks" id="thanks" hidden role="dialog" aria-modal="true" aria-labelledby="thanks-title">
+        <div class="thanks-card">
+            <p class="kicker" data-i18n="thanks_kicker">Рахмет!</p>
+            <h2 id="thanks-title" class="section-title" data-i18n="thanks_title">Шақыруымызды қабылдағаныңызға рахмет</h2>
+            <p class="lead" data-i18n="thanks_text">Сізді қуана қарсы аламыз.</p>
+            <button type="button" class="cta-button" id="close-thanks" data-i18n="thanks_close">Жабу</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p data-i18n="footer_text">Mahabbatpen jasalğan • Әли & Бағдат © 2026</p>
+    </footer>
+
+    <script>
+            var submitted = false;
     
     function showSuccessMessage() {
         // Hide the form smoothly
@@ -136,12 +180,261 @@
         // Show the success message
         document.getElementById('success-message').style.display = 'block';
     }
-</script>
+        
+        function scrollToId(id) {
+            var el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
 
+        const translations = {
+            kk: {
+                nav_photo: 'Фото',
+                nav_invite: 'Шақыру',
+                nav_form: 'Толтыру',
+                intro_kicker: 'ӘЛИ & БАҒДАТ',
+                intro_title: 'Үйлену тойына шақыру',
+                intro_hint: 'Төмен сырғытыңыз',
+                invite_greeting: 'Құрметті  біздің ағайын-туыс,бауырларларымыз,нағашы-жиен,құдаларымыз,достарымыз,әріптес-сыныптастарымыз жәнеде көршілеріміз!',
+                invite_text_1: 'Сіздерді ұлымыз',
+                invite_names: 'Әли мен Бағдаттың',
+                invite_text_2: 'өмірлеріндегі ең маңызды күндерінің бірі –',
+                invite_text_3: 'үйлену тойының',
+                invite_text_4: 'қадірлі қонағы болуға шақырамыз.',
+                invite_date_label: 'Күні',
+                invite_date: '25 сәуір',
+                invite_time_label: 'Уақыты',
+                invite_time: '19:00',
+                invite_address_label: 'Мекенжай',
+                invite_address: 'Орал қаласы, Зағачанск ықшам ауданы, Айтқұлова 29',
+                invite_hosts_label: 'Той иелері:',
+                invite_hosts: 'Сәтжан & Гүлсайран',
+                invite_closing: 'Сіздермен қуанышымызды бөлісуге асыға күтеміз! 🤍',
+                invite_button: 'Шақыруды қабылдау',
+                form_title: 'Толтыру',
+                form_subtitle: 'Қонақтардың мәліметтерін енгізіңіз (мәліметтер ешқайда жіберілмейді).',
+                form_main_label: 'Аты-жөні',
+                form_main_placeholder: 'Мысалы: Айдана Нұрлан',
+                form_spouse_toggle: 'Мен жұбайыммен/жолдасыммен келемін',
+                form_spouse_label: 'Жұбайының/жолдасының аты-жөні',
+                form_spouse_placeholder: 'Мысалы: Асқар Нұрлан',
+                form_finish_button: 'Аяқтау',
+                thanks_kicker: 'Рахмет!',
+                thanks_title: 'Шақыруымызды қабылдағаныңызға рахмет',
+                thanks_text: 'Сізді қуана қарсы аламыз.',
+                thanks_close: 'Жабу',
+                footer_text: 'Mahabbatpen jasalğan • Әли & Бағдат © 2026'
+            },
+            en: {
+                nav_photo: 'Photo',
+                nav_invite: 'Invitation',
+                nav_form: 'Details',
+                intro_kicker: 'ALI & BAGDAT',
+                intro_title: 'Wedding Invitation',
+                intro_hint: 'Scroll down',
+                invite_greeting: 'Dear Guest!',
+                invite_text_1: 'We invite you',
+                invite_names: 'Ali & Bagdat',
+                invite_text_2: 'to be an honored guest at one of the most important days',
+                invite_text_3: 'of their lives –',
+                invite_text_4: 'their wedding celebration.',
+                invite_date_label: 'Date',
+                invite_date: 'April 25',
+                invite_time_label: 'Time',
+                invite_time: '19:00',
+                invite_address_label: 'Address',
+                invite_address: 'Oral city, Zagachansk rural district, Aitkulova 29',
+                invite_hosts_label: 'Wedding hosts:',
+                invite_hosts: 'Satjan & Gulsayran',
+                invite_closing: 'We look forward to seeing you 🤍',
+                invite_button: 'Accept invitation',
+                form_title: 'Details',
+                form_subtitle: 'Please fill in guest details (nothing will be sent anywhere).',
+                form_main_label: 'First and last name',
+                form_main_placeholder: 'For example: John Smith',
+                form_spouse_toggle: 'I will come with my spouse',
+                form_spouse_label: 'Spouse’s first and last name',
+                form_spouse_placeholder: 'For example: Jane Smith',
+                form_finish_button: 'Finish',
+                thanks_kicker: 'Thank you!',
+                thanks_title: 'Thank you for accepting our invitation',
+                thanks_text: 'We will be happy to see you.',
+                thanks_close: 'Close',
+                footer_text: 'Made with love • Ali & Bagdat © 2026'
+            },
+            ru: {
+                nav_photo: 'Фото',
+                nav_invite: 'Приглашение',
+                nav_form: 'Заполнение',
+                intro_kicker: 'ALI & BAGDAT',
+                intro_title: 'Приглашение на свадьбу',
+                intro_hint: 'Прокрутите вниз',
+                invite_greeting: 'Уважаемый гость!',
+                invite_text_1: 'Мы приглашаем вас',
+                invite_names: 'Али и Бағдат',
+                invite_text_2: 'стать почётным гостем одного из самых важных дней',
+                invite_text_3: 'их жизни –',
+                invite_text_4: 'свадебного торжества.',
+                invite_date_label: 'Дата',
+                invite_date: '25 апреля',
+                invite_time_label: 'Время',
+                invite_time: '19:00',
+                invite_address_label: 'Адрес',
+                invite_address: 'г. Уральск, Загачанский сельский округ, ул. Айткулова 29',
+                invite_hosts_label: 'Хозяева торжества:',
+                invite_hosts: 'Сатжан & Гүлсайран',
+                invite_closing: 'Ждём вас с нетерпением 🤍',
+                invite_button: 'Принять приглашение',
+                form_title: 'Заполнение',
+                form_subtitle: 'Введите данные гостей (ничего никуда не отправляется).',
+                form_main_label: 'Имя и фамилия',
+                form_main_placeholder: 'Например: Иван Иванов',
+                form_spouse_toggle: 'Я буду с супругом/супругой',
+                form_spouse_label: 'Имя и фамилия супруга/супруги',
+                form_spouse_placeholder: 'Например: Мария Иванова',
+                form_finish_button: 'Завершить',
+                thanks_kicker: 'Спасибо!',
+                thanks_title: 'Спасибо, что приняли приглашение',
+                thanks_text: 'Будем рады вас видеть.',
+                thanks_close: 'Закрыть',
+                footer_text: 'Сделано с любовью • Ali & Bagdat © 2026'
+            }
+        };
 
-    <footer>
-        <p>Made with love for Jane & John &copy; 2026</p>
-    </footer>
+        function setLanguage(lang) {
+            var dict = translations[lang] || translations['kk'];
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(function (el) {
+                var key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+                var key = el.getAttribute('data-i18n-placeholder');
+                if (dict[key]) {
+                    el.placeholder = dict[key];
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
+            }
+            
+            var audio = document.getElementById('bg-music');
+            var musicBtn = document.getElementById('music-toggle');
+            var musicIcon = document.getElementById('music-icon');
+
+            function setMusicUI(on) {
+                if (!musicBtn) return;
+                musicBtn.setAttribute('aria-pressed', String(on));
+                musicBtn.classList.toggle('on', on);
+                if (musicIcon) {
+                    musicIcon.classList.toggle('muted', !on);
+                }
+            }
+            
+            if (musicIcon) {
+                musicIcon.style.display = 'block';
+                musicIcon.style.visibility = 'visible';
+                musicIcon.style.opacity = '1';
+            }
+
+            if (audio && musicBtn) {
+                audio.volume = 0.4;
+                
+                musicBtn.style.display = 'flex';
+                musicBtn.style.visibility = 'visible';
+                musicBtn.style.opacity = '1';
+                
+                audio.addEventListener('error', function(e) {
+                    console.warn('Не удалось загрузить аудио файл toizhira.mp3:', e);
+                    musicBtn.style.opacity = '0.6';
+                    musicBtn.title = 'Аудио файл не найден';
+                });
+
+                audio.addEventListener('loadeddata', function() {
+                    audio.play().then(function () {
+                        setMusicUI(true);
+                    }).catch(function () {
+                        console.log('Автоплей заблокирован браузером');
+                        setMusicUI(false);
+                    });
+                });
+
+                if (audio.readyState >= 2) {
+                    audio.play().then(function () {
+                        setMusicUI(true);
+                    }).catch(function () {
+                        setMusicUI(false);
+                    });
+                }
+
+                musicBtn.addEventListener('click', function () {
+                    if (audio.paused) {
+                        audio.play().then(function () {
+                            setMusicUI(true);
+                        }).catch(function (err) {
+                            console.warn('Не удалось воспроизвести музыку:', err);
+                            setMusicUI(false);
+                            alert('Не удалось воспроизвести музыку. Проверьте, что файл toizhira.mp3 загружен на сервер.');
+                        });
+                    } else {
+                        audio.pause();
+                        setMusicUI(false);
+                    }
+                });
+            } else {
+                if (musicBtn) {
+                    musicBtn.style.display = 'flex';
+                    musicBtn.style.opacity = '0.5';
+                    musicBtn.style.cursor = 'not-allowed';
+                }
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var lang = btn.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+
+            setLanguage('kk');
+
+            document.getElementById('accept-invite').addEventListener('click', function () {
+                scrollToId('form');
+            });
+
+            var withSpouse = document.getElementById('with-spouse');
+            var spouseField = document.getElementById('spouse-field');
+            var guest2 = document.getElementById('guest2');
+
+            withSpouse.addEventListener('change', function () {
+                spouseField.hidden = !withSpouse.checked;
+                guest2.required = withSpouse.checked;
+                if (!withSpouse.checked) guest2.value = '';
+            });
+
+            var thanks = document.getElementById('thanks');
+            document.getElementById('guest-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                thanks.hidden = false;
+                document.body.classList.add('no-scroll');
+            });
+
+            document.getElementById('close-thanks').addEventListener('click', function () {
+                thanks.hidden = true;
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    </script>
 
 </body>
 </html>
