@@ -41,7 +41,8 @@
         <div class="intro-shade" aria-hidden="true"></div>
         <div class="intro-content">
             <p class="intro-kicker" data-i18n="intro_kicker">Бағдат</p>
-            <h1 class="intro-title" data-i18n="intro_title">Ұзату тойына шақыру</h1>
+            <h1 class="intro-title" data-i18n="intro_title">Қыз Ұзату</h1>
+            <p class="intro-date" data-i18n="intro_date">Дата</p>
             <p class="intro-hint" data-i18n="intro_hint">Төмен сырғытыңыз</p>
         </div>
     </header>
@@ -50,13 +51,12 @@
         <div class="container">
             <div class="invite-card">
                 <p class="invite-greeting" data-i18n="invite_greeting">Құрметті біздің
-                    ағайын-туыс,бауырларларымыз,нағашы-жиен,құдаларымыз,достарымыз,әріптес-сыныптастарымыз жәнеде
+                    ағайын-туыс,бауырларларымыз,нағашы-жиен,құдаларымыз,достарымыз,әріптес-сыныптастарымыз және де
                     көршілеріміз!</p>
                 <div class="invite-text-block">
                     <p class="invite-text-line" data-i18n="invite_text_1">Сіздерді қызымыз</p>
                     <p class="invite-names" data-i18n="invite_names">Бағдаттың</p>
-                    <p class="invite-text-line" data-i18n="invite_text_2">ұядан ұшқан күні –</p>
-                    <p class="invite-text-line" data-i18n="invite_text_3">ұзату тойының</p>
+                    <p class="invite-text-line" data-i18n="invite_text_2">ұядан ұшқан күні – ұзату тойының</p>
                     <p class="invite-text-line" data-i18n="invite_text_4">қадірлі қонағы болуға шақырамыз.</p>
                 </div>
 
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="invite-hosts">
-                    <p class="hosts-label" data-i18n="invite_hosts_label">Той иелері:</p>
+                    <p class="hosts-label" data-i18n="invite_hosts_label">Той иесі:</p>
                     <p class="hosts-names" data-i18n="invite_hosts">Аймен</p>
                 </div>
 
@@ -129,20 +129,14 @@
                     </div>
 
                     <div class="toggle">
-    <!-- UI чекбокс -->
-    <input id="with-spouse-ui" type="checkbox">
-    <label for="with-spouse-ui" data-i18n="form_spouse_toggle">
-        Мен жұбайыммен/жолдасыммен келемін
-    </label>
-</div>
+                        <input id="with-spouse-ui" type="checkbox">
+                        <label for="with-spouse-ui" data-i18n="form_spouse_toggle">
+                            Мен жұбайыммен/жолдасыммен келемін
+                        </label>
+                    </div>
 
-<!-- Google Form input -->
-<input
-    type="hidden"
-    id="with-spouse-hidden"
-    name="entry.1261223599"
-    value=""
->
+                    <input type="hidden" id="with-spouse-hidden" name="entry.1261223599"
+                        value="Мен жұбайыммен/жолдасыммен келемін" disabled>
 
                     <button type="submit" class="cta-button cta-secondary" data-i18n="form_finish_button">
                         Аяқтау
@@ -187,22 +181,22 @@
                 nav_invite: 'Шақыру',
                 nav_form: 'Толтыру',
                 intro_kicker: 'БАҒДАТ',
-                intro_title: 'Ұзату тойына шақыру',
+                intro_title: 'Қыз Ұзату',
+                intro_date: '19.04.2026',
                 intro_hint: 'Төмен сырғытыңыз',
-                invite_greeting: 'Құрметті  біздің ағайын-туыс,бауырларларымыз,нағашы-жиен,құдаларымыз,достарымыз,әріптес-сыныптастарымыз жәнеде көршілеріміз!',
-                invite_text_1: 'Сіздерді қызымыз',
-                invite_names: 'Бағдаттың',
-                invite_text_2: 'ұядан ұшқан күні –',
-                invite_text_3: 'ұзату тойының',
-                invite_text_4: 'қадірлі қонағы болуға шақырамыз.',
+                invite_greeting: 'Құрметті ағайын-туыс,бауырларлар,нағашы-жиен,құда-жекжат,дос-жарандар,әріптестер және көршілер!',
+                invite_text_1: 'Сіздерді аяулы',
+                invite_names: 'Бағдат',
+                invite_text_2: 'қызымыздың ұзату тойының',
+                invite_text_4: 'қадірлі қонағы болуға шақырамыз!',
                 invite_date_label: 'Күні',
                 invite_date: '19 сәуір',
                 invite_time_label: 'Уақыты',
                 invite_time: '18:00',
                 invite_address_label: 'Мекенжай',
                 invite_address: 'Алматы қаласы, Сеитов 12, Сұлтан Сарайы',
-                invite_hosts_label: 'Той иелері:',
-                invite_hosts: 'Аймен',
+                invite_hosts_label: 'Той иесі:',
+                invite_hosts: 'Айман',
                 invite_closing: 'Сіздермен қуанышымызды бөлісуге асыға күтеміз! 🤍',
                 invite_button: 'Шақыруды қабылдау',
                 form_title: 'Толтыру',
@@ -225,6 +219,7 @@
                 nav_form: 'Details',
                 intro_kicker: 'BAGDAT',
                 intro_title: 'Uzatu Invitation',
+                intro_date: '19.04.2026',
                 intro_hint: 'Scroll down',
                 invite_greeting: 'Dear Guest!',
                 invite_text_1: 'We invite you',
@@ -238,8 +233,8 @@
                 invite_time: '18:00',
                 invite_address_label: 'Address',
                 invite_address: 'Almaty city, Seitov 12, Sultan Sarayi',
-                invite_hosts_label: 'Celebration hosts:',
-                invite_hosts: 'Aimen',
+                invite_hosts_label: 'Celebration host:',
+                invite_hosts: 'Aiman',
                 invite_closing: 'We look forward to seeing you 🤍',
                 invite_button: 'Accept invitation',
                 form_title: 'Details',
@@ -262,6 +257,7 @@
                 nav_form: 'Заполнение',
                 intro_kicker: 'BAGDAT',
                 intro_title: 'Приглашение на Узату',
+                intro_date: '19.04.2026',
                 intro_hint: 'Прокрутите вниз',
                 invite_greeting: 'Уважаемый гость!',
                 invite_text_1: 'Приглашаю вас',
@@ -276,7 +272,7 @@
                 invite_address_label: 'Адрес',
                 invite_address: 'г. Алматы, ул. Сеитова 12, Султан Сарайы',
                 invite_hosts_label: 'Хозяева торжества:',
-                invite_hosts: 'Аимен',
+                invite_hosts: 'Айман',
                 invite_closing: 'Ждём вас с нетерпением 🤍',
                 invite_button: 'Принять приглашение',
                 form_title: 'Заполнение',
@@ -419,14 +415,11 @@
             });
 
             const spouseUI = document.getElementById('with-spouse-ui');
-const spouseHidden = document.getElementById('with-spouse-hidden');
+            const spouseHidden = document.getElementById('with-spouse-hidden');
 
-spouseUI.addEventListener('change', function () {
-    spouseHidden.value = spouseUI.checked
-        ? 'Мен жұбайыммен/жолдасыммен келемін'
-        : '';
-});
-
+            spouseUI.addEventListener('change', function () {
+                spouseHidden.disabled = !spouseUI.checked;
+            });
 
             function showThanks() {
                 document.getElementById('thanks').hidden = false;
