@@ -44,6 +44,7 @@ a {
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.06);
   padding: 14px 18px;
+  opacity: 1000;
 }
 
 .nav-inner {
@@ -320,7 +321,7 @@ body.intro-lift .intro-bg {
 }
 
 .invite-details-grid {
-  display: flex;
+  display: grid;
   gap: 1.2rem;
   margin: 2rem 0 1.5rem 0;
   flex-wrap: wrap;
@@ -343,8 +344,9 @@ body.intro-lift .intro-bg {
 }
 
 .detail-icon {
-  font-size: 1.7em;
-  margin-right: 0.8em;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
 }
 .detail-content {
   width: 100%;
