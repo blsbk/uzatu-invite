@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бағдат Ұзату — Шақыру</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -39,18 +39,48 @@
     <header class="intro" id="photo">
         <div class="intro-bg" aria-hidden="true"></div>
         <div class="intro-shade" aria-hidden="true"></div>
-        <div class="intro-content">
-            <p class="intro-kicker" data-i18n="intro_kicker">Бағдат</p>
-            <h1 class="intro-title" data-i18n="intro_title">Қыз Ұзату</h1>
-            <p class="intro-date" data-i18n="intro_date">Дата</p>
-            <p class="intro-hint" data-i18n="intro_hint">Төмен сырғытыңыз</p>
+        <div class="floating-particles" aria-hidden="true">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="intro-overlay">
+            <div class="intro-content-top">
+                <p class="intro-kicker" data-i18n="intro_kicker">Бағдат</p>
+                <h1 class="intro-title" data-i18n="intro_title">Қыз Ұзату</h1>
+                <div class="countdown-container">
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label" data-i18n="countdown_days">Күн</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label" data-i18n="countdown_hours">Сағат</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label" data-i18n="countdown_minutes">Минут</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label" data-i18n="countdown_seconds">Секунд</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-content-bottom">
+                <p class="intro-hint" data-i18n="intro_hint">Төмен сырғытыңыз</p>
+            </div>
         </div>
     </header>
 
     <section id="invite" class="section section-invite">
         <div class="container">
             <div class="invite-card">
-                <p class="invite-greeting" data-i18n="invite_greeting">Құрметті біздің
+                <p class="invite-text-line" data-i18n="invite_greeting">Құрметті біздің
                     ағайын-туыс,бауырларларымыз,нағашы-жиен,құдаларымыз,достарымыз,әріптес-сыныптастарымыз және де
                     көршілеріміз!</p>
                 <div class="invite-text-block">
@@ -184,6 +214,10 @@
                 intro_title: 'Қыз Ұзату',
                 intro_date: '19.04.2026',
                 intro_hint: 'Төмен сырғытыңыз',
+                countdown_days: 'Күн',
+                countdown_hours: 'Сағат',
+                countdown_minutes: 'Минут',
+                countdown_seconds: 'Секунд',
                 invite_greeting: 'Құрметті ағайын-туыс,бауырларлар,нағашы-жиен,құда-жекжат,дос-жарандар,әріптестер және көршілер!',
                 invite_text_1: 'Сіздерді аяулы',
                 invite_names: 'Бағдат',
@@ -221,6 +255,10 @@
                 intro_title: 'Uzatu Invitation',
                 intro_date: '19.04.2026',
                 intro_hint: 'Scroll down',
+                countdown_days: 'Days',
+                countdown_hours: 'Hours',
+                countdown_minutes: 'Minutes',
+                countdown_seconds: 'Seconds',
                 invite_greeting: 'Dear Guest!',
                 invite_text_1: 'We invite you',
                 invite_names: 'Bagdat',
@@ -259,6 +297,10 @@
                 intro_title: 'Приглашение на Узату',
                 intro_date: '19.04.2026',
                 intro_hint: 'Прокрутите вниз',
+                countdown_days: 'Дней',
+                countdown_hours: 'Часов',
+                countdown_minutes: 'Минут',
+                countdown_seconds: 'Секунд',
                 invite_greeting: 'Уважаемый гость!',
                 invite_text_1: 'Приглашаю вас',
                 invite_names: 'Бағдат',
@@ -425,6 +467,36 @@
                 document.getElementById('thanks').hidden = false;
                 document.body.classList.add('no-scroll');
             }
+
+            // Countdown functionality
+            function startCountdown() {
+                const eventDate = new Date('2026-04-19T18:00:00+06:00'); // April 19, 2026, 6:00 PM Almaty time
+                
+                function updateCountdown() {
+                    const now = new Date().getTime();
+                    const distance = eventDate.getTime() - now;
+                    
+                    if (distance < 0) {
+                        document.getElementById('countdown').innerHTML = '<div class="countdown-ended">The celebration has begun! 🎉</div>';
+                        return;
+                    }
+                    
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                }
+                
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            }
+            
+            startCountdown();
         });
     </script>
 
